@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "BeatSense Beats Autoclicker",
+  "description": "Automatically collect your free BeatSense beats every hour!",
+  "version": "1.0",
+  "browser_action": {
+    "default_popup": "Autoclicker.html",
+    "styles": "styles.css"
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.beatsense.com/*"
+      ],
+      "js": [
+        "main.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}
